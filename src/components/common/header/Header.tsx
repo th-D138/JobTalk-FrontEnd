@@ -43,10 +43,10 @@ export default function Header() {
         <SearchForm />
         {!isLoggedIn ? (
           <div className={styles.userBox}>
-            <Link to='/login'>
+            <Link to='/login' data-testid='login-button'>
               <Button variant='outline'>{t('login')}</Button>
             </Link>
-            <Link to='/register'>
+            <Link to='/register' data-testid='register-button'>
               <Button>{t('signUp')}</Button>
             </Link>
           </div>
@@ -55,7 +55,11 @@ export default function Header() {
             <Link to='/profile' className={styles.profileBox}>
               <img src={userImgUrl} alt='프로필' />
             </Link>
-            <Button variant='outline' onClick={() => handleLogout()}>
+            <Button
+              variant='outline'
+              onClick={() => handleLogout()}
+              data-testid='logout-button'
+            >
               {t('로그아웃')}
             </Button>
           </div>
