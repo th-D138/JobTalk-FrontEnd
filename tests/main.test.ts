@@ -9,4 +9,9 @@ test.describe('메인 페이지', () => {
     await page.getByTestId('login-button').click();
     await expect(page).toHaveURL('/login');
   });
+
+  test('회원가입 페이지로 이동할 수 있다.', async ({ page }) => {
+    await page.getByTestId('register-button').click();
+    await expect(page).toHaveURL('/register');
+  });
 });
